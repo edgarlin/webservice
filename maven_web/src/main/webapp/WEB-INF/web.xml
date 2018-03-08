@@ -4,4 +4,27 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>SampleFilter</filter-name>
+  	<display-name>SampleFilter</display-name>
+  	<description></description>
+  	<filter-class>sample.pkg.SampleFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>SampleFilter</filter-name>
+  	<url-pattern>/SampleURL</url-pattern>
+  </filter-mapping>
+  <listener>
+  	<listener-class>sample.pkg.SampleListener</listener-class>
+  </listener>
+  <servlet>
+  	<servlet-name>SampleServlet</servlet-name>
+  	<display-name>SampleServlet</display-name>
+  	<description></description>
+  	<servlet-class>sample.pkg.SampleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SampleServlet</servlet-name>
+  	<url-pattern>/SampleURL</url-pattern>
+  </servlet-mapping>
 </web-app>

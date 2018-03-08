@@ -7,7 +7,17 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>maven_web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-bom</artifactId>
+				<version>2.10.0</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -20,6 +30,14 @@
 			<artifactId>javaee-api</artifactId>
 			<version>8.0</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
 		</dependency>
 	</dependencies>
 	<build>
@@ -34,48 +52,48 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.wildfly.plugins</groupId> -->
-			<!-- <artifactId>wildfly-maven-plugin</artifactId> -->
-			<!-- <version>1.2.1.Final</version> -->
-			<!-- <configuration> -->
-			<!-- <java-opts> -->
-			<!-- <java-opt>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005</java-opt> -->
-			<!-- </java-opts> -->
-			<!-- <modules-path> -->
-			<!-- <paths> -->
-			<!-- <path>/opt/WildFly/modules</path> -->
-			<!-- <path>/opt/my-modules</path> -->
-			<!-- </paths> -->
-			<!-- </modules-path> -->
-			<!-- <jboss-home>/opt/WildFly</jboss-home> -->
-			<!-- <server-args> -->
-			<!-- <server-arg>-Djboss.server.base.dir=/opt/WildFly/standalone/</server-arg> -->
-			<!-- <server-arg>-b=0.0.0.0</server-arg> -->
-			<!-- </server-args> -->
-			<!-- <port>8888</port> -->
-			<!-- </configuration> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <id>undeploy</id> -->
-			<!-- <phase>clean</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>start</goal> -->
-			<!-- <goal>undeploy</goal> -->
-			<!-- </goals> -->
-			<!-- <configuration> -->
-			<!-- <ignoreMissingDeployment>true</ignoreMissingDeployment> -->
-			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- <execution> -->
-			<!-- <id>deploy</id> -->
-			<!-- <phase>install</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>deploy</goal> -->
-			<!-- </goals> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.2.1.Final</version>
+				<!-- <configuration> -->
+				<!-- <java-opts> -->
+				<!-- <java-opt>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005</java-opt> -->
+				<!-- </java-opts> -->
+				<!-- <modules-path> -->
+				<!-- <paths> -->
+				<!-- <path>/opt/WildFly/modules</path> -->
+				<!-- <path>/opt/my-modules</path> -->
+				<!-- </paths> -->
+				<!-- </modules-path> -->
+				<!-- <jboss-home>/opt/WildFly</jboss-home> -->
+				<!-- <server-args> -->
+				<!-- <server-arg>-Djboss.server.base.dir=/opt/WildFly/standalone/</server-arg> -->
+				<!-- <server-arg>-b=0.0.0.0</server-arg> -->
+				<!-- </server-args> -->
+				<!-- <port>8888</port> -->
+				<!-- </configuration> -->
+				<!-- <executions> -->
+				<!-- <execution> -->
+				<!-- <id>undeploy</id> -->
+				<!-- <phase>clean</phase> -->
+				<!-- <goals> -->
+				<!-- <goal>start</goal> -->
+				<!-- <goal>undeploy</goal> -->
+				<!-- </goals> -->
+				<!-- <configuration> -->
+				<!-- <ignoreMissingDeployment>true</ignoreMissingDeployment> -->
+				<!-- </configuration> -->
+				<!-- </execution> -->
+				<!-- <execution> -->
+				<!-- <id>deploy</id> -->
+				<!-- <phase>install</phase> -->
+				<!-- <goals> -->
+				<!-- <goal>deploy</goal> -->
+				<!-- </goals> -->
+				<!-- </execution> -->
+				<!-- </executions> -->
+			</plugin>
 		</plugins>
 	</build>
 </project>
