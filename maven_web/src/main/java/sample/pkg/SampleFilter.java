@@ -1,6 +1,8 @@
 package sample.pkg;
 
 import java.io.IOException;
+import java.util.Enumeration;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -16,7 +18,7 @@ import org.apache.logging.log4j.Logger;
  */
 public class SampleFilter implements Filter {
 
-	private static final Logger LOG = LogManager.getLogger(SampleListener.class);
+	private static final Logger LOG = LogManager.getLogger(SampleFilter.class);
 
 	/**
 	 * Default constructor.
@@ -47,6 +49,10 @@ public class SampleFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
+		for (Enumeration<String> parmNames = fConfig.getInitParameterNames(); parmNames.hasMoreElements();) {
+			String parmName = parmNames.nextElement();
+			LOG.info(parmName + ":" + fConfig.getInitParameter(parmName));
+		}
 		LOG.info("INFO");
 	}
 

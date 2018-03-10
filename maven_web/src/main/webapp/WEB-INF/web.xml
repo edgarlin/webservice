@@ -3,28 +3,39 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <filter>
-  	<filter-name>SampleFilter</filter-name>
-  	<display-name>SampleFilter</display-name>
-  	<description></description>
-  	<filter-class>sample.pkg.SampleFilter</filter-class>
-  </filter>
-  <filter-mapping>
-  	<filter-name>SampleFilter</filter-name>
-  	<url-pattern>/SampleURL</url-pattern>
-  </filter-mapping>
-  <listener>
-  	<listener-class>sample.pkg.SampleListener</listener-class>
-  </listener>
-  <servlet>
-  	<servlet-name>SampleServlet</servlet-name>
-  	<display-name>SampleServlet</display-name>
-  	<description></description>
-  	<servlet-class>sample.pkg.SampleServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>SampleServlet</servlet-name>
-  	<url-pattern>/SampleURL</url-pattern>
-  </servlet-mapping>
+	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>SampleFilter-Name</filter-name>
+		<display-name>SampleFilter-DisplayName</display-name>
+		<description></description>
+		<filter-class>sample.pkg.SampleFilter</filter-class>
+		<init-param>
+			<param-name>filter-param-name</param-name>
+			<param-value>filter-param-value</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SampleFilter-Name</filter-name>
+		<url-pattern>/SampleURL</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>sample.pkg.SampleListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>SampleServlet-Name</servlet-name>
+		<display-name>SampleServlet-DisplayName</display-name>
+		<description></description>
+		<servlet-class>sample.pkg.SampleServlet</servlet-class>
+		<init-param>
+			<param-name>servlet-param-name</param-name>
+			<param-value>servlet-param-value</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SampleServlet-Name</servlet-name>
+		<url-pattern>/SampleURL</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>/SampleURL</welcome-file>
+	</welcome-file-list>
 </web-app>
