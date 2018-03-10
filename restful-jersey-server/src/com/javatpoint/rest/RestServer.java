@@ -10,22 +10,22 @@ public class RestServer {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String sayPlainTextHello() {
-		return "Hello Jersey Plain";
+		return "Hello Jersey in Plain Text";
 	}
 
 	// This method is called if XML is request
 	@GET
 	@Produces(MediaType.TEXT_XML)
 	public String sayXMLHello() {
-		return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey" + "</hello>";
+		return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey in XML" + "</hello>";
 	}
 
 	// This method is called if HTML is request
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String sayHtmlHello() {
-		return "<html> " + "<title>" + "Hello Jersey" + "</title>" + "<body><h1>" + "Hello Jersey HTML" + "</h1></body>"
-				+ "</html> ";
+		return "<html> " + "<title>" + "Hello Jersey" + "</title>" + "<body><h1>" + "Hello Jersey in HTML"
+				+ "</h1></body>" + "</html> ";
 	}
 
 }
