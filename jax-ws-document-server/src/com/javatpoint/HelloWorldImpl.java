@@ -11,4 +11,9 @@ public class HelloWorldImpl implements HelloWorldInterface{
 		return "Hello World JAX-WS " + name;
 	}
 
+	@Override
+	public int getInt(int i) {
+		return i;
+	}
+
 }

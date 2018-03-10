@@ -6,16 +6,13 @@ import javax.xml.ws.Service;
 
 public class HelloWorldClient {
 	public static void main(String[] args) throws Exception {
-		URL url = new URL("http://localhost:7777/ws/hello?wsdl");
-
-		// 1st argument service URI, refer to wsdl document above
-		// 2nd argument is service name, refer to wsdl document above
-		QName qname = new QName("http://javatpoint.com/", "HelloWorldImplService");
-
-		Service service = Service.create(url, qname);
-		HelloWorldInterface hello = service.getPort(HelloWorldInterface.class);
+		HelloWorldInterface hello = Service
+				.create(new URL("http://localhost:7777/ws/hello?wsdl"),
+						new QName("http://javatpoint.com/", "HelloWorldImplService"))
+				.getPort(HelloWorldInterface.class);
 
 		System.out.println(hello.getHelloWorldAsString("from client"));
+		System.out.println(hello.getInt(3));
 
 	}
 

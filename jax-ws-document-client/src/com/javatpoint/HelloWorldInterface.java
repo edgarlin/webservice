@@ -10,5 +10,8 @@ import javax.jws.soap.SOAPBinding.Style;
 public interface HelloWorldInterface{
 	@WebMethod 
 	String getHelloWorldAsString(String name);
- 
+
+	@WebMethod 
+	int getInt(int i);
+
 }
