@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.springframework</groupId>
-    <artifactId>gs-consuming-web-service</artifactId>
+    <groupId>sample.ws</groupId>
+    <artifactId>soapClient</artifactId>
     <version>0.1.0</version>
 
     <parent>
@@ -51,7 +51,7 @@
                     <generatePackage>com.generated.pkgname</generatePackage>
                     <schemas>
                         <schema>
-                            <url>http://localhost:8080/ws/countries.wsdl</url>
+                            <url>http://localhost:8080/ServletRegistrationBean/wsdlBeanName.wsdl</url>
                         </schema>
                     </schemas>
                 </configuration>

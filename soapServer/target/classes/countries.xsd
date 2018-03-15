@@ -1,7 +1,8 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
-           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://com.sample/soapserver"	targetNamespace="http://com.sample/soapserver" 
+	elementFormDefault="qualified">
 
-    <xs:element name="getCountryRequest">
+    <xs:element name="operationRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="name" type="xs:string"/>
@@ -9,7 +10,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getCountryResponse">
+    <xs:element name="operationResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="country" type="tns:country"/>

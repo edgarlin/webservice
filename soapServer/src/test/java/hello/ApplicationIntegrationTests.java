@@ -16,9 +16,8 @@
 
 package hello;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import io.spring.guides.gs_producing_web_service.GetCountryRequest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +28,8 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.ClassUtils;
 import org.springframework.ws.client.core.WebServiceTemplate;
+
+import sample.com.soapserver.OperationRequest;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -41,17 +42,17 @@ public class ApplicationIntegrationTests {
 
     @Before
     public void init() throws Exception {
-        marshaller.setPackagesToScan(ClassUtils.getPackageName(GetCountryRequest.class));
+        marshaller.setPackagesToScan(ClassUtils.getPackageName(OperationRequest.class));
         marshaller.afterPropertiesSet();
     }
 
     @Test
     public void testSendAndReceive() {
         WebServiceTemplate ws = new WebServiceTemplate(marshaller);
-        GetCountryRequest request = new GetCountryRequest();
+        OperationRequest request = new OperationRequest();
         request.setName("Spain");
 
         assertThat(ws.marshalSendAndReceive("http://localhost:"
-                + port + "/ws", request)).isNotNull();
+                + port + "/ServletRegistrationBean", request)).isNotNull();
     }
 }

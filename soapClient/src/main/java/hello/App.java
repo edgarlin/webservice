@@ -1,7 +1,7 @@
 
 package hello;
 
-import hello.wsdl.GetCountryResponse;
+import com.generated.pkgname.*;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,9 +16,9 @@ public class App {
 	}
 
 	@Bean
-	CommandLineRunner xxx(CountryClient bean001) {
+	CommandLineRunner xxx(AppClient bean001) {
 		return args -> {
-			GetCountryResponse response = bean001.getCountry("Spain");
+			OperationResponse response = bean001.doSomething("Spain");
 			System.err.println(response.getCountry().getCapital());
 		};
 	}
