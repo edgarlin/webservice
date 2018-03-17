@@ -29,7 +29,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.ClassUtils;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
-import sample.com.soapserver.OperationRequest;
+import xsd.tns.soapserver.OperationRequest;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -49,10 +49,9 @@ public class ApplicationIntegrationTests {
     @Test
     public void testSendAndReceive() {
         WebServiceTemplate ws = new WebServiceTemplate(marshaller);
-        OperationRequest request = new OperationRequest();
-        request.setName("Spain");
-
+        OperationRequest req = new OperationRequest();
+        req.setName("Spain");
         assertThat(ws.marshalSendAndReceive("http://localhost:"
-                + port + "/ServletRegistrationBean", request)).isNotNull();
+                + port + "/ServletRegistrationBean", req)).isNotNull();
     }
 }

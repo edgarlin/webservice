@@ -16,7 +16,7 @@ public class App {
 	}
 
 	@Bean
-	CommandLineRunner xxx(AppClient bean001) {
+	CommandLineRunner unknown(AppClient bean001) {
 		return args -> {
 			OperationResponse response = bean001.doSomething("Spain");
 			System.err.println(response.getCountry().getCapital());

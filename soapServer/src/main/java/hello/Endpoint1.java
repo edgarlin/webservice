@@ -6,28 +6,28 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import sample.com.soapserver.OperationRequest;
-import sample.com.soapserver.OperationResponse;
+import xsd.tns.soapserver.OperationRequest;
+import xsd.tns.soapserver.OperationResponse;
 
 @Endpoint
 public class Endpoint1 {
-	private static final String NAMESPACE_URI = "http://com.sample/soapserver"; // same as xsd tns
-
-	private Repository1 countryRepository;
+	private static final String NAMESPACE_URI = "http://tns.xsd/soapserver"; // same as xsd tns
 
 	@Autowired
-	public Endpoint1(Repository1 xxx) {
-		this.countryRepository = xxx;
-		System.out.println("Endpoint1.Endpoint1");
+	private Repository1 repo;
 
-	}
+//	@Autowired	//constructor
+//	public Endpoint1(Repository1 repo) {
+//		System.out.println("Endpoint1.Endpoint1");
+//		this.repo = repo;
+//	}
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "operationRequest") // same as xsd request name
 	@ResponsePayload
-	public OperationResponse yyy(@RequestPayload OperationRequest request) {
-		System.out.println("Endpoint1.yyy");
-		OperationResponse response = new OperationResponse();
-		response.setCountry(countryRepository.findCountry(request.getName()));
-		return response;
+	public OperationResponse unknown(@RequestPayload OperationRequest req) {
+		System.out.println("Endpoint1.unknown");
+		OperationResponse res = new OperationResponse();
+		res.setCountry(repo.findCountry(req.getName()));
+		return res;
 	}
 }

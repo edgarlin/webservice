@@ -8,9 +8,9 @@ import com.generated.pkgname.*;
 public class AppClient extends WebServiceGatewaySupport {
 
 	public OperationResponse doSomething(String str) {
-		OperationRequest request = new OperationRequest();
-		request.setName(str);
-		OperationResponse response = (OperationResponse) this.getWebServiceTemplate().marshalSendAndReceive(request);
-		return response;
+		OperationRequest req = new OperationRequest();
+		req.setName(str);
+		OperationResponse res = (OperationResponse) this.getWebServiceTemplate().marshalSendAndReceive(req);
+		return res;
 	}
 }

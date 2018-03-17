@@ -1,10 +1,10 @@
-sample/com/soapserver/OperationRequest.class
+xsd/tns/soapserver/package-info.class
 hello/AppConfig.class
 hello/Endpoint1.class
-sample/com/soapserver/OperationResponse.class
-sample/com/soapserver/ObjectFactory.class
-sample/com/soapserver/Currency.class
 hello/Repository1.class
-sample/com/soapserver/package-info.class
-sample/com/soapserver/Country.class
+xsd/tns/soapserver/Country.class
+xsd/tns/soapserver/ObjectFactory.class
+xsd/tns/soapserver/Currency.class
 hello/App.class
+xsd/tns/soapserver/OperationRequest.class
+xsd/tns/soapserver/OperationResponse.class

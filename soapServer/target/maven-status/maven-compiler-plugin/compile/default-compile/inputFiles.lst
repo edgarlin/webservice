@@ -1,10 +1,10 @@
-/Volumes/500GB/repos/webservice/soapServer/src/main/java/sample/com/soapserver/OperationResponse.java
-/Volumes/500GB/repos/webservice/soapServer/src/main/java/sample/com/soapserver/ObjectFactory.java
-/Volumes/500GB/repos/webservice/soapServer/src/main/java/sample/com/soapserver/OperationRequest.java
+/Volumes/500GB/repos/webservice/soapServer/src/main/java/xsd/tns/soapserver/package-info.java
+/Volumes/500GB/repos/webservice/soapServer/src/main/java/xsd/tns/soapserver/OperationRequest.java
+/Volumes/500GB/repos/webservice/soapServer/src/main/java/xsd/tns/soapserver/OperationResponse.java
 /Volumes/500GB/repos/webservice/soapServer/src/main/java/hello/Endpoint1.java
 /Volumes/500GB/repos/webservice/soapServer/src/main/java/hello/App.java
-/Volumes/500GB/repos/webservice/soapServer/src/main/java/sample/com/soapserver/package-info.java
+/Volumes/500GB/repos/webservice/soapServer/src/main/java/xsd/tns/soapserver/Currency.java
 /Volumes/500GB/repos/webservice/soapServer/src/main/java/hello/AppConfig.java
 /Volumes/500GB/repos/webservice/soapServer/src/main/java/hello/Repository1.java
-/Volumes/500GB/repos/webservice/soapServer/src/main/java/sample/com/soapserver/Country.java
-/Volumes/500GB/repos/webservice/soapServer/src/main/java/sample/com/soapserver/Currency.java
+/Volumes/500GB/repos/webservice/soapServer/src/main/java/xsd/tns/soapserver/ObjectFactory.java
+/Volumes/500GB/repos/webservice/soapServer/src/main/java/xsd/tns/soapserver/Country.java

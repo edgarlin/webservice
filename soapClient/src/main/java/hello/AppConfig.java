@@ -18,7 +18,7 @@ public class AppConfig {
 	@Bean
 	public AppClient bean001(Jaxb2Marshaller bean000) {
 		AppClient client = new AppClient();
-		client.setDefaultUri("http://localhost:8080/ServletRegistrationBean");
+		client.setDefaultUri("http://localhost:8080/ServletRegistrationBean2");	// same as server servlet bean registration
 		client.setMarshaller(bean000);
 		client.setUnmarshaller(bean000);
 		return client;
