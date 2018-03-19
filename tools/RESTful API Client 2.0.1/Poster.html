@@ -1,0 +1,116 @@
+<html data-ng-app="myExtApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Chrome - Poster</title>
+
+<script src="angular.min.js"></script>
+<script src="angular-resource.min.js"></script>
+<script src="angular-route.min.js"></script>
+<script src="angular-datepicker.js"></script>
+<script src="jquery.js"></script>
+<script src="bootstrap.min.js"></script>
+
+<script src="app.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css">
+<link href="sticky-footer-navbar.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container" data-ng-controller='posterController' style="padding-top: 2em; min-width: 800px; min-height: 500px">
+	
+		<h2>Chrome Poster! (RESTful API Client)</h2>
+		<form class="form-inline" style="width: inherit;">
+			<div class="form-group" style="width: inherit;">
+				<label for="methodTypes">Method</label>
+				<select id = "methodTypes" class="form-control" data-ng-model="requestType" style="width: auto;">
+					<option selected>GET</option>
+					<option>POST</option>
+					<option>PUT</option>
+					<option>DELETE</option>
+				</select>
+				<label for="urlID">URL</label>
+				<input type="text" class="form-control" id = "urlID" style="width: 75%;" placeholder="Url/query string params..." data-ng-model="passedInURL"> 
+				<button class="btn btn-primary" type="button" data-ng-click="apiCallButtonClicked('GET')">Send</button>
+			</div>
+		</form>
+		
+		<ul class="nav nav-tabs">
+		  <li role="presentation" data-ng-class="{active: currentTab == 'request'}" data-ng-model="currentTab"  data-ng-click="tabClick('request')"><a href="#">Request</a></li>
+		  <li role="presentation" data-ng-class="{active: currentTab == 'response'}" data-ng-model="currentTab"  data-ng-click="tabClick('response')"><a href="#">Response</a></li>
+		</ul>
+
+		<div id="requestDiv" data-ng-show="currentTab == 'request'" style="padding:20px;" >
+			<Span style="padding-top: 10px;"><B>Request: {{requestType}}  &nbsp; {{passedInURL}} </B></Span>
+			<br>
+			<div class="btn-group">
+			  <form class="form-inline" style="width: 800px;">
+				<label for="contentTypesDropDown">Content Type</label>
+				<select id = "contentTypesDropDown" class="form-control" data-ng-model="contentType"  style="width: auto;">
+					<option selected>application/json</option>
+					<option>text/plain</option>
+					<option>text/html</option>
+					<option>text/xml</option>
+				</select>
+			  	<input type="text" class="form-control" id = "urlID" placeholder="Custom Content Type" placeholder="Content Type" data-ng-value = contentType style="width: 65%;" > 
+			  	
+			  	<label style="padding-top: 10px;">Authentication</label>
+			  	<label for="userID">UserId:</label>
+				<input type="text" class="form-control" id = "userID" data-ng-value = userID  > 
+			  	<label for="pwd">Passwd:</label>
+				<input type="password" class="form-control" id = "pwd" data-ng-value = passWord  > 
+				<br>
+			  	<label style="padding-top: 10px;" for="requestBody">Request Body</label>
+			  	<textarea id="requestBody" class="form-control" rows="20" cols="125" data-ng-mdodel="requestBody" data-ng-readonly="requestType=='GET'"></textarea>
+			  	
+			  </form>
+			</div>
+		</div>
+		
+		<div id = "responseDiv" data-ng-hide="currentTab == 'request'" >
+		
+			<label>Request Status : </label> {{httpStatusCode}}
+		
+		
+			<div class="row">
+				<div class="col-lg-8">
+					<!-- /input-group -->
+					<label> <input type="radio" name="inlineRadioOptions1" id="inlineRadio4" value='text' data-ng-model='outputRadioButtonValue'>Text</label> 
+					<label> <input type="radio" name="inlineRadioOptions1" id="inlineRadio5" value='json' data-ng-model='outputRadioButtonValue'>JSON</label> 
+					<label> <input type="radio" name="inlineRadioOptions1" id="inlineRadio5" value='xml' data-ng-model='outputRadioButtonValue'>xml</label>
+					<!-- /.col-lg-6 -->
+				</div>
+			</div>
+			<div class="row" style="padding-top: 10px;" data-ng-if="isError==true">
+				<div class="col-lg-8 has-error">
+					<label style="color: red;">{{errorMessage}}</label>
+				</div>
+			</div>
+			<div class="row" style="padding-top: 10px;"
+				data-ng-if="outputRadioButtonValue=='json'">
+				<div class="col-lg-10">
+					<textarea class="form-control"
+						rows="15">{{jsonResponse | json }}</textarea>
+				</div>
+			</div>
+			<div class="row" style="padding-top: 10px;"
+				data-ng-if="outputRadioButtonValue=='text'">
+				<div class="col-lg-10">
+					<textarea class="form-control" rows="15">{{jsonResponse }}</textarea>
+				</div>
+			</div>
+			<div class="row" style="padding-top: 10px;"
+				data-ng-if="outputRadioButtonValue=='xml'">
+				<div class="col-lg-10">
+					<textarea class="form-control" rows="15">{{jsonResponse | xml }}</textarea>
+				</div>
+			</div>
+		</div>		
+	</div>
+	
+ 	<footer class="footer" >
+      <div class="container">
+        <p  class="text-muted">Chrome RESTful API client. <a href ="#" onclick="openWebStore();">Comments</a></p>
+      </div>
+    </footer>
+</body>
+</html>

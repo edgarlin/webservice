@@ -1,0 +1,23 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "default.png",
+      "default_title": "Poster"
+   },
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "description": "This is a Rest client app to test your API calls...",
+   "icons": {
+      "128": "Poster.png",
+      "16": "Poster.png",
+      "48": "Poster.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiIkNqWudD2PlYByGm/OKbhwmVxOTxVBFgDbucFkdLJ9OSWFBi4arE9e5t3GtoC+o6mqmiLNVlSrP2su/+ZY7pfP8gluveT/zjIOOJczdJlqxwDO/sVNgN5VwYkAXtZk5z4rtrmB0l0sx2Eo8EIYdUDj3KJySuwApn8/Hc38Kb5ylBxX0YEP8ENgz2U5ivmse0PFBNa02Suvxi2HQer/Jv4HchB5q8ZAiaGGOgc18JKo0APnCmlXqc3XdAMoTq/8wtxgl0W/W0aCUve3CT3o6RQ8riqL2oc3H7ydJECE5vwSpNB8+yuEx77zwifgxwlg0HEYWRC1Sm0zsieKg/TKnhwIDAQAB",
+   "manifest_version": 2,
+   "name": "RESTful API Client",
+   "permissions": [ "tabs", "activeTab", "geolocation", "http://*/", "https://*/" ],
+   "short_name": "Rest Client",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0.1"
+}
