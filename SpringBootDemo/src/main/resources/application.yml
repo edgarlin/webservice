@@ -1,0 +1,24 @@
+debug: false
+trace: true
+
+logging:
+  file:
+    max-history: 5
+    max-size: 1GB
+  pattern:
+    console:
+  level:
+    root: off
+    com.example.demo.SpringDemoApplication: trace 
+app:
+  bool: false
+  str:  application yaml file
+  names:
+    - name1
+    - name2
+    - name3
+  
+web:
+  web2:
+    bool: true
+    str:  web
