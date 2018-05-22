@@ -38,10 +38,11 @@ public class Upload extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Part filePart = request.getPart("file");
+		Part filePart = request.getPart("nameFile");
 		//BufferedWriter bwriter = new BufferedWriter(new OutputStreamWriter(response.getOutputStream()));
 		PrintWriter pwriter = response.getWriter();
 		BufferedReader breader = new BufferedReader(new InputStreamReader(filePart.getInputStream()));
+		
 		
 		response.setContentType("application/octet-stream");
 		response.setHeader("Content-Disposition", "attachment; filename=\"output.txt\"");
@@ -51,7 +52,8 @@ public class Upload extends HttpServlet {
 			System.out.println(str);
 			pwriter.println(str);
 		}
-		System.out.println("BBBBBBBB22222222");
+		System.out.println(request.getAttribute("name"));
+		System.out.println(request.getParameter("name"));
 	}
 
 	/**
