@@ -1,9 +1,5 @@
 package com.demo;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -24,7 +20,7 @@ public class DemoMain {
 		Level0 l0 = new Level0();
 		Level1 l1a = new Level1();
 		Level1 l1b = new Level1();
-		l0.setString1("AAAA");
+		//l0.setString1("AAAA");
 		l1a.setInt1(3);
 		l1b.setInt1(4);
 		l1s.add(l1a);
@@ -47,7 +43,7 @@ public class DemoMain {
 				System.out.println(l0.getLevel1s().get(1).getInt1());
 			}
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}
 	}
 }
